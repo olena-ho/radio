@@ -21,3 +21,28 @@ export const radio = [
     link: '/radiozurnal.html',
   },
 ];
+
+export const renderNavigation = () => {
+  const header = document.querySelector('header');
+
+  radio.forEach((radioItem) => {
+    header.innerHTML += `
+    <a href="${radioItem.link}">${radioItem.name}
+    </a>
+    `;
+  });
+}
+
+export const renderStation = (stationIndex) => {
+  const text = document.querySelector('#text');
+  const radioItem = radio[stationIndex];
+
+  const renderText = (radioItem) => {
+    text.innerHTML = `
+    <h1>${radioItem.name}</h1>
+    <h2>${radioItem.frequency}</h2>
+    <p>${radioItem.description}</p>
+    `;
+  };
+  renderText(radioItem);
+}
