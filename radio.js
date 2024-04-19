@@ -33,16 +33,12 @@ export const renderNavigation = () => {
   });
 }
 
-export const renderStation = (stationIndex) => {
+export const renderStation = (index) => {
   const text = document.querySelector('#text');
-  const radioItem = radio[stationIndex];
-
-  const renderText = (radioItem) => {
-    text.innerHTML = `
-    <h1>${radioItem.name}</h1>
-    <h2>${radioItem.frequency}</h2>
-    <p>${radioItem.description}</p>
-    `;
-  };
-  renderText(radioItem);
+  
+  text.innerHTML = `
+  <h1>${radio[index].name}</h1>
+  <h2>${radio[index].frequency}</h2>
+  <p>${radio[index].description}</p>
+  `;
 }
